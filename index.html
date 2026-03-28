@@ -5,36 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
     body {
       margin: 0;
-      overflow: hidden;
       background: black;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
 
     .hero {
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       position: relative;
-      z-index: 2;
+      z-index: 3;
+      padding: 20px;
+      flex-direction: column;
     }
 
     h1 {
-      font-size: 80px;
+      font-size: clamp(48px, 8vw, 120px);
       margin: 0;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: -2px;
+      line-height: 1;
     }
 
     p {
       margin-top: 20px;
-      color: #aaa;
-      font-size: 18px;
+      color: #a1a1aa;
+      font-size: 20px;
+      max-width: 700px;
     }
 
     canvas {
@@ -44,17 +49,30 @@
       z-index: 1;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 40px;
-      }
+    .rocket {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 80px;
+      z-index: 2;
+      animation: float 4s ease-in-out infinite;
     }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
   </style>
 </head>
 
 <body>
 
 <canvas id="bg"></canvas>
+
+<!-- ROCKET -->
+<img class="rocket" src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png">
 
 <div class="hero">
   <h1>SIDDHARTH CHAUDHURI</h1>
@@ -65,19 +83,27 @@
   const canvas = document.getElementById("bg");
   const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resize();
+  window.addEventListener("resize", resize);
 
   let particles = [];
 
-  for (let i = 0; i < 100; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2,
-      speedX: (Math.random() - 0.5) * 0.5,
-      speedY: (Math.random() - 0.5) * 0.5
-    });
+  function init() {
+    particles = [];
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.8 + 0.2,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4
+      });
+    }
   }
 
   function animate() {
@@ -99,12 +125,8 @@
     requestAnimationFrame(animate);
   }
 
+  init();
   animate();
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
 </script>
 
 </body>
