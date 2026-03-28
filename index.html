@@ -32,14 +32,12 @@
       margin: 0;
       font-weight: 900;
       letter-spacing: -2px;
-      line-height: 1;
     }
 
     p {
       margin-top: 20px;
       color: #a1a1aa;
       font-size: 20px;
-      max-width: 700px;
     }
 
     canvas {
@@ -52,16 +50,39 @@
     /* ROCKET */
     .rocket {
       position: absolute;
-      top: 25%;
-      left: 15%;
-      width: 100px;
+      top: 20%;
+      left: 12%;
+      width: 80px;
       z-index: 2;
       animation: float 4s ease-in-out infinite;
     }
 
+    /* ASTRONAUT */
+    .astronaut {
+      position: absolute;
+      top: 32%;
+      left: 22%;
+      width: 60px;
+      z-index: 2;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* TETHER LINE */
+    .tether {
+      position: absolute;
+      top: 26%;
+      left: 16%;
+      width: 120px;
+      height: 2px;
+      background: white;
+      transform: rotate(25deg);
+      z-index: 2;
+      opacity: 0.6;
+    }
+
     @keyframes float {
       0% { transform: translateY(0px); }
-      50% { transform: translateY(-25px); }
+      50% { transform: translateY(-20px); }
       100% { transform: translateY(0px); }
     }
 
@@ -73,7 +94,13 @@
 <canvas id="bg"></canvas>
 
 <!-- ROCKET -->
-<img class="rocket" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Rocket_icon.svg/512px-Rocket_icon.svg.png">
+<img class="rocket" src="https://cdn-icons-png.flaticon.com/512/744/744465.png">
+
+<!-- ASTRONAUT -->
+<img class="astronaut" src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+<!-- TETHER -->
+<div class="tether"></div>
 
 <div class="hero">
   <h1>SIDDHARTH CHAUDHURI</h1>
