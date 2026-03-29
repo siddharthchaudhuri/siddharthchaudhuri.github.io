@@ -26,8 +26,8 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      z-index: 2;
       position: relative;
+      z-index: 2;
     }
 
     h1 {
@@ -51,17 +51,15 @@
       text-align: center;
       font-size: 40px;
       font-weight: 900;
-      margin-bottom: 8px;
     }
 
     .group-label {
       text-align: center;
       font-size: 12px;
       color: #777;
-      margin-bottom: 40px;
+      margin: 10px 0 40px;
     }
 
-    /* 🔥 FIXED GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -71,10 +69,10 @@
     }
 
     .card {
-      position: relative;
       border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
+      position: relative;
     }
 
     .card img {
@@ -100,7 +98,6 @@
 
     .card-title {
       font-weight: 800;
-      font-size: 16px;
     }
 
     .card-desc {
@@ -160,6 +157,8 @@
       margin-bottom: 10px;
       background: #1a1a1a;
       border-radius: 8px;
+      text-decoration: none;
+      color: white;
     }
 
     .link:hover {
@@ -186,9 +185,7 @@
 
   <div class="grid">
 
-    <div class="card" onclick="openModal('Spec Ads','Would\'ve Could\'ve Should\'ve','https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074',[
-      'KFC | English','Olly | English','Casper | English'
-    ])">
+    <div class="card" onclick="openModal('Spec Ads')">
       <img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074">
       <div class="overlay">
         <div class="card-title">Spec Ads</div>
@@ -196,9 +193,7 @@
       </div>
     </div>
 
-    <div class="card" onclick="openModal('Brand Pitches','Campaign-ready creativity','https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171',[
-      'Bobakat Pitch','Apsara Pitch','Tribe Pitch','KDM Pitch'
-    ])">
+    <div class="card" onclick="openModal('Brand Pitches')">
       <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171">
       <div class="overlay">
         <div class="card-title">Brand Pitches</div>
@@ -206,9 +201,7 @@
       </div>
     </div>
 
-    <div class="card" onclick="openModal('Social Media','Scroll-stopping ideas','https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974',[
-      'Campaign 1','Campaign 2','Campaign 3'
-    ])">
+    <div class="card" onclick="openModal('Social Media')">
       <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974">
       <div class="overlay">
         <div class="card-title">Social Media Campaigns</div>
@@ -216,9 +209,7 @@
       </div>
     </div>
 
-    <div class="card" onclick="openModal('OOH','Making streets speak','https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070',[
-      'Billboard 1','Billboard 2'
-    ])">
+    <div class="card" onclick="openModal('OOH')">
       <img src="https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070">
       <div class="overlay">
         <div class="card-title">OOH Promotion</div>
@@ -236,67 +227,112 @@
 
 <script>
 
+/* REAL DATA */
+const data = {
+  "Spec Ads": {
+    desc: "Would've Could've Should've",
+    img: "https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074",
+    items: [
+      {title:"KFC | English", url:"https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit?usp=sharing"},
+      {title:"Olly | English", url:"https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit?usp=sharing"},
+      {title:"Casper | English", url:"https://docs.google.com/presentation/d/1crgikIbC654uu3lt7T_iRd4a0NzFRAmNOu5PUzejw2M/edit?usp=sharing"}
+    ]
+  },
+
+  "Brand Pitches": {
+    desc: "Campaign-ready creativity",
+    img: "https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171",
+    items: [
+      {title:"Bobakat Pitch", url:"https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit"},
+      {title:"Apsara Ice Cream Pitch", url:"https://docs.google.com/presentation/d/1TDQfuX41TiGsqTE-CgpwKZTZKHwMeFz-d5djOjakjF8/edit"},
+      {title:"Tribe Pitch", url:"https://docs.google.com/presentation/d/1VzPZtLMSkiCoS4hv1BNO2NztnfvVyu5NAQ9DLlYxcWI/edit"},
+      {title:"KDM Pitch", url:"https://docs.google.com/presentation/d/1aeF9DVbnmBoZU3MCvSZzWHF7rFYTkslkG4lXYZuwqR4/edit"}
+    ]
+  },
+
+  "Social Media": {
+    desc: "Scroll-stopping ideas",
+    img: "https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974",
+    items: [
+      {title:"CG Campaign", url:"https://docs.google.com/presentation/d/1hpN0wRj3HFa3JQN8mgGYw890vykHbWmhOCOnyRbtKcI/edit"},
+      {title:"Bobakat Campaign", url:"https://docs.google.com/presentation/d/1M3NuDMqUNMQvFfp14LT65TLzXwowFORQnr7MbxGww7U/edit"}
+    ]
+  },
+
+  "OOH": {
+    desc: "Making streets speak",
+    img: "https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070",
+    items: [
+      {title:"Apsara Ice Creams", url:"https://docs.google.com/presentation/d/1BbgWdJdM9dMpXreFV4-qy_qLkoRPp5KqEABpukBcZPw/edit"}
+    ]
+  }
+};
+
 /* MODAL */
-function openModal(title, desc, img, items) {
-  const modal = document.getElementById("modal");
+function openModal(name){
+  const d = data[name];
   const box = document.getElementById("modalBox");
 
   box.innerHTML = `
     <div class="modal-header">
-      <img src="${img}">
+      <img src="${d.img}">
       <div>
-        <h3>${title}</h3>
-        <p style="color:#aaa">${desc}</p>
+        <h3>${name}</h3>
+        <p style="color:#aaa">${d.desc}</p>
       </div>
     </div>
+
     <div class="modal-links">
-      ${items.map(i=>`<div class="link">${i} <span>→</span></div>`).join("")}
+      ${d.items.map(i => `
+        <a href="${i.url}" target="_blank" class="link">
+          ${i.title} <span>→</span>
+        </a>
+      `).join("")}
     </div>
   `;
 
-  modal.style.display = "flex";
+  document.getElementById("modal").style.display = "flex";
 }
 
-function closeModal() {
+function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
 
 /* STARS */
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+const c=document.getElementById("bg");
+const ctx=c.getContext("2d");
 
 function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  c.width=innerWidth;
+  c.height=innerHeight;
 }
 resize();
-window.addEventListener("resize", resize);
+window.onresize=resize;
 
-let particles = Array.from({length:150},()=>({
-  x:Math.random()*canvas.width,
-  y:Math.random()*canvas.height,
-  size:Math.random()*2,
+let p=Array.from({length:150},()=>({
+  x:Math.random()*c.width,
+  y:Math.random()*c.height,
   vx:(Math.random()-0.5)*0.24,
-  vy:(Math.random()-0.5)*0.24
+  vy:(Math.random()-0.5)*0.24,
+  s:Math.random()*2
 }));
 
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    p.x+=p.vx; p.y+=p.vy;
-    if(p.x<0)p.x=canvas.width;
-    if(p.x>canvas.width)p.x=0;
-    if(p.y<0)p.y=canvas.height;
-    if(p.y>canvas.height)p.y=0;
-
+function a(){
+  ctx.clearRect(0,0,c.width,c.height);
+  p.forEach(e=>{
+    e.x+=e.vx; e.y+=e.vy;
+    if(e.x<0)e.x=c.width;
+    if(e.x>c.width)e.x=0;
+    if(e.y<0)e.y=c.height;
+    if(e.y>c.height)e.y=0;
     ctx.beginPath();
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.arc(e.x,e.y,e.s,0,6.28);
     ctx.fillStyle="white";
     ctx.fill();
   });
-  requestAnimationFrame(animate);
+  requestAnimationFrame(a);
 }
-animate();
+a();
 
 </script>
 
