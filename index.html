@@ -549,6 +549,92 @@ document.getElementById("modal").style.display = "none";
 }
 }
 </script>
+<script>
 
+// ⭐ STARS (WORKING WITH YOUR CANVAS ID)
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let particles = Array.from({ length: 140 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  vx: (Math.random() - 0.5) * 0.3,
+  vy: (Math.random() - 0.5) * 0.3,
+  size: Math.random() * 2
+}));
+
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateStars);
+}
+animateStars();
+
+
+// ✅ FIXED MODAL (USES YOUR STRUCTURE)
+function openModal(sectionName) {
+  const section = data[sectionName];
+  const box = document.getElementById("modalBox");
+
+  box.innerHTML = `
+    <div class="modal-header">
+      <div class="modal-title">${sectionName}</div>
+      <div class="modal-desc">${section.desc || ""}</div>
+    </div>
+
+    <div class="modal-content">
+      ${section.subsections.map(sub => `
+        <div class="subsection">
+          ${sub.title ? `<div class="sub-title">${sub.title}</div>` : ""}
+          ${sub.items.map(item => `
+            <a href="${item.url}" target="_blank" class="link">
+              ${item.title} <span>→</span>
+            </a>
+          `).join("")}
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+
+// ✅ CLOSE MODAL
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+
+// ❌ REMOVE BLUE/PURPLE LINK COLOR
+document.addEventListener("click", e => {
+  if (e.target.tagName === "A") {
+    e.target.style.color = "white";
+  }
+});
+
+</script>
 </body>
 </html>
