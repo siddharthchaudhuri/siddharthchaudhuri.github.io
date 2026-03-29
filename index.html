@@ -14,8 +14,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    a { color: white; text-decoration: none; }
-
     canvas {
       position: fixed;
       inset: 0;
@@ -44,16 +42,16 @@
     }
 
     .section {
-      padding: 80px 20px;
+      padding: 80px 40px;
       position: relative;
       z-index: 2;
     }
 
     .title {
       text-align: center;
-      font-size: 36px;
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-size: 40px;
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
     .group-label {
@@ -63,24 +61,25 @@
       margin-bottom: 40px;
     }
 
+    /* 🔥 FIXED GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1400px;
       margin: auto;
     }
 
     .card {
       position: relative;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
       transition: 0.4s;
     }
@@ -92,7 +91,7 @@
     .overlay {
       position: absolute;
       inset: 0;
-      padding: 16px;
+      padding: 18px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -101,6 +100,7 @@
 
     .card-title {
       font-weight: 800;
+      font-size: 16px;
     }
 
     .card-desc {
@@ -130,7 +130,7 @@
     .modal-box {
       background: #111;
       width: 90%;
-      max-width: 600px;
+      max-width: 650px;
       border-radius: 12px;
       overflow: hidden;
     }
@@ -143,9 +143,10 @@
     }
 
     .modal-header img {
-      width: 120px;
-      height: 70px;
+      width: 140px;
+      height: 80px;
       object-fit: cover;
+      border-radius: 6px;
     }
 
     .modal-links {
@@ -155,8 +156,8 @@
     .link {
       display: flex;
       justify-content: space-between;
-      padding: 12px;
-      margin-bottom: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
       background: #1a1a1a;
       border-radius: 8px;
     }
@@ -185,25 +186,81 @@
 
   <div class="grid">
 
-    <!-- 5 tiles now -->
-    <div class="card"><img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop"><div class="overlay"><div class="card-title">Spec Ads</div><div class="card-desc">Would've Could've Should've</div></div></div>
+    <div class="card" onclick="openModal('Spec Ads','Would\'ve Could\'ve Should\'ve','https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074',[
+      'KFC | English','Olly | English','Casper | English'
+    ])">
+      <img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074">
+      <div class="overlay">
+        <div class="card-title">Spec Ads</div>
+        <div class="card-desc">Would've Could've Should've</div>
+      </div>
+    </div>
 
-    <div class="card"><img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171&auto=format&fit=crop"><div class="overlay"><div class="card-title">Brand Pitches</div><div class="card-desc">Campaign-ready creativity</div></div></div>
+    <div class="card" onclick="openModal('Brand Pitches','Campaign-ready creativity','https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171',[
+      'Bobakat Pitch','Apsara Pitch','Tribe Pitch','KDM Pitch'
+    ])">
+      <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171">
+      <div class="overlay">
+        <div class="card-title">Brand Pitches</div>
+        <div class="card-desc">Campaign-ready creativity</div>
+      </div>
+    </div>
 
-    <div class="card"><img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974&auto=format&fit=crop"><div class="overlay"><div class="card-title">Social Media Campaigns</div><div class="card-desc">Scroll-stopping ideas</div></div></div>
+    <div class="card" onclick="openModal('Social Media','Scroll-stopping ideas','https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974',[
+      'Campaign 1','Campaign 2','Campaign 3'
+    ])">
+      <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974">
+      <div class="overlay">
+        <div class="card-title">Social Media Campaigns</div>
+        <div class="card-desc">Scroll-stopping ideas</div>
+      </div>
+    </div>
 
-    <div class="card"><img src="https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070&auto=format&fit=crop"><div class="overlay"><div class="card-title">OOH Promotion</div><div class="card-desc">Making streets speak</div></div></div>
-
-    <div class="card"><img src="https://images.unsplash.com/photo-1577190651915-bf62d54d5b36?q=80&w=2069&auto=format&fit=crop"><div class="overlay"><div class="card-title">Professional Videos</div><div class="card-desc">Big ideas, beautifully told</div></div></div>
+    <div class="card" onclick="openModal('OOH','Making streets speak','https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070',[
+      'Billboard 1','Billboard 2'
+    ])">
+      <img src="https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070">
+      <div class="overlay">
+        <div class="card-title">OOH Promotion</div>
+        <div class="card-desc">Making streets speak</div>
+      </div>
+    </div>
 
   </div>
 </div>
 
-<div class="modal" id="modal" onclick="if(event.target.id==='modal')this.style.display='none'">
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()">
   <div class="modal-box" id="modalBox"></div>
 </div>
 
 <script>
+
+/* MODAL */
+function openModal(title, desc, img, items) {
+  const modal = document.getElementById("modal");
+  const box = document.getElementById("modalBox");
+
+  box.innerHTML = `
+    <div class="modal-header">
+      <img src="${img}">
+      <div>
+        <h3>${title}</h3>
+        <p style="color:#aaa">${desc}</p>
+      </div>
+    </div>
+    <div class="modal-links">
+      ${items.map(i=>`<div class="link">${i} <span>→</span></div>`).join("")}
+    </div>
+  `;
+
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
 /* STARS */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
@@ -240,6 +297,7 @@ function animate(){
   requestAnimationFrame(animate);
 }
 animate();
+
 </script>
 
 </body>
