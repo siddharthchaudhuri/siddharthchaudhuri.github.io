@@ -26,19 +26,20 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+white-space: nowrap;
 }
 
 .hero h1 {
-font-size: 120px;
+font-size: clamp(48px, 8vw, 110px);
 margin: 0;
-letter-spacing: 2px;
 font-weight: 800;
+text-align: center;
 }
 
 .hero p {
 opacity: 0.6;
 font-size: 18px;
-margin-top: 16px;
+margin-top: 20px;
 }
 
 /* WORK */
