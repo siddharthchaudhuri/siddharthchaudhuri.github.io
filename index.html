@@ -12,7 +12,13 @@
       background: black;
       color: white;
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
     }
 
     .hero {
@@ -31,23 +37,56 @@
       font-size: clamp(48px, 8vw, 120px);
       margin: 0;
       font-weight: 900;
-      letter-spacing: -2px;
-      line-height: 1;
     }
 
     p {
       margin-top: 20px;
-      color: #a1a1aa;
+      color: #aaa;
       font-size: 20px;
-      max-width: 700px;
     }
 
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
+    .section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
     }
+
+    .group-title {
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #777;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      border: 1px solid #222;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background: #111;
+    }
+
+    .card h3 {
+      margin: 0 0 10px 0;
+    }
+
+    a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 5px 0;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 6px;
+    }
+
+    a:hover {
+      background: #222;
+    }
+
   </style>
 </head>
 
@@ -58,6 +97,24 @@
 <div class="hero">
   <h1>SIDDHARTH CHAUDHURI</h1>
   <p>Copywriter, Campaign Creator, AI Enthusiast, Idea Factory.</p>
+</div>
+
+<div class="section">
+  <div class="group-title">Creativity Zone</div>
+
+  <div class="card">
+    <h3>Spec Ads</h3>
+    <a href="https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit?usp=sharing" target="_blank">KFC | English</a>
+    <a href="https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit?usp=sharing" target="_blank">Olly | English</a>
+    <a href="https://docs.google.com/presentation/d/1crgikIbC654uu3lt7T_iRd4a0NzFRAmNOu5PUzejw2M/edit?usp=sharing" target="_blank">Casper | English</a>
+  </div>
+
+  <div class="card">
+    <h3>Brand Pitches</h3>
+    <a href="https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" target="_blank">Bobakat Pitch</a>
+    <a href="https://docs.google.com/presentation/d/1TDQfuX41TiGsqTE-CgpwKZTZKHwMeFz-d5djOjakjF8/edit?usp=sharing" target="_blank">Apsara Ice Cream</a>
+  </div>
+
 </div>
 
 <script>
