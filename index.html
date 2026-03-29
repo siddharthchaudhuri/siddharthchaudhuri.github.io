@@ -30,7 +30,6 @@
       position: relative;
       z-index: 2;
       flex-direction: column;
-      padding: 20px;
     }
 
     h1 {
@@ -42,49 +41,66 @@
     p {
       margin-top: 20px;
       color: #aaa;
-      font-size: 20px;
     }
 
     .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 80px 40px;
       position: relative;
       z-index: 2;
     }
 
-    .group-title {
+    .title {
       text-align: center;
-      font-size: 14px;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 12px;
       letter-spacing: 2px;
       color: #777;
       margin-bottom: 40px;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
     .card {
-      border: 1px solid #222;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      display: flex;
+      align-items: flex-end;
       padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      background: #111;
+      font-weight: bold;
     }
 
-    .card h3 {
-      margin: 0 0 10px 0;
-    }
-
-    a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 5px 0;
-      padding: 10px;
-      border: 1px solid #333;
-      border-radius: 6px;
-    }
-
-    a:hover {
-      background: #222;
+    .card:hover .overlay {
+      background: rgba(0,0,0,0.6);
     }
 
   </style>
@@ -99,22 +115,40 @@
   <p>Copywriter, Campaign Creator, AI Enthusiast, Idea Factory.</p>
 </div>
 
+<!-- MY WORK -->
 <div class="section">
-  <div class="group-title">Creativity Zone</div>
+  <div class="title">My Work</div>
 
-  <div class="card">
-    <h3>Spec Ads</h3>
-    <a href="https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit?usp=sharing" target="_blank">KFC | English</a>
-    <a href="https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit?usp=sharing" target="_blank">Olly | English</a>
-    <a href="https://docs.google.com/presentation/d/1crgikIbC654uu3lt7T_iRd4a0NzFRAmNOu5PUzejw2M/edit?usp=sharing" target="_blank">Casper | English</a>
+  <div class="subtitle">CREATIVITY ZONE</div>
+
+  <div class="grid">
+
+    <a href="https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit?usp=sharing" target="_blank" class="card">
+      <img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop">
+      <div class="overlay">Spec Ads</div>
+    </a>
+
+    <a href="https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" target="_blank" class="card">
+      <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171&auto=format&fit=crop">
+      <div class="overlay">Brand Pitches</div>
+    </a>
+
+    <a href="https://docs.google.com/presentation/d/1hpN0wRj3HFa3JQN8mgGYw890vykHbWmhOCOnyRbtKcI/edit?usp=sharing" target="_blank" class="card">
+      <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974&auto=format&fit=crop">
+      <div class="overlay">Social Media Campaigns & Creatives</div>
+    </a>
+
+    <a href="https://docs.google.com/presentation/d/1BbgWdJdM9dMpXreFV4-qy_qLkoRPp5KqEABpukBcZPw/edit?usp=sharing" target="_blank" class="card">
+      <img src="https://images.unsplash.com/photo-1513757378314-e46255f6ed16?q=80&w=2070&auto=format&fit=crop">
+      <div class="overlay">Out Of House (OOH) Promotion</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1mV_qdKqieWIJA_YgZMv5E7xMUddjkMWc/view" target="_blank" class="card">
+      <img src="https://images.unsplash.com/photo-1577190651915-bf62d54d5b36?q=80&w=2069&auto=format&fit=crop">
+      <div class="overlay">Professional Videos</div>
+    </a>
+
   </div>
-
-  <div class="card">
-    <h3>Brand Pitches</h3>
-    <a href="https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" target="_blank">Bobakat Pitch</a>
-    <a href="https://docs.google.com/presentation/d/1TDQfuX41TiGsqTE-CgpwKZTZKHwMeFz-d5djOjakjF8/edit?usp=sharing" target="_blank">Apsara Ice Cream</a>
-  </div>
-
 </div>
 
 <script>
