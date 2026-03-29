@@ -12,7 +12,7 @@
       background: black;
       color: white;
       font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      overflow-x: hidden; /* allows vertical scroll later */
     }
 
     .hero {
@@ -22,8 +22,9 @@
       align-items: center;
       text-align: center;
       position: relative;
-      z-index: 3;
+      z-index: 2;
       flex-direction: column;
+      padding: 20px;
     }
 
     h1 {
@@ -31,12 +32,14 @@
       margin: 0;
       font-weight: 900;
       letter-spacing: -2px;
+      line-height: 1;
     }
 
     p {
       margin-top: 20px;
       color: #a1a1aa;
       font-size: 20px;
+      max-width: 700px;
     }
 
     canvas {
@@ -45,86 +48,12 @@
       left: 0;
       z-index: 1;
     }
-
-    /* ROCKET */
-    .rocket {
-      position: absolute;
-      top: 18%;
-      left: 12%;
-      width: 40px;
-      height: 80px;
-      background: white;
-      border-radius: 20px 20px 10px 10px;
-      z-index: 2;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    /* ROCKET TIP */
-    .rocket::before {
-      content: "";
-      position: absolute;
-      top: -15px;
-      left: 0;
-      width: 40px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-    }
-
-    /* ASTRONAUT */
-    .astronaut {
-      position: absolute;
-      top: 30%;
-      left: 22%;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      z-index: 2;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    /* BODY */
-    .astronaut::after {
-      content: "";
-      position: absolute;
-      top: 20px;
-      left: -5px;
-      width: 30px;
-      height: 20px;
-      background: white;
-      border-radius: 10px;
-    }
-
-    /* TETHER */
-    .tether {
-      position: absolute;
-      top: 24%;
-      left: 14%;
-      width: 100px;
-      height: 1px;
-      background: white;
-      transform: rotate(25deg);
-      opacity: 0.5;
-      z-index: 2;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-
   </style>
 </head>
 
 <body>
 
 <canvas id="bg"></canvas>
-
-<div class="rocket"></div>
-<div class="astronaut"></div>
-<div class="tether"></div>
 
 <div class="hero">
   <h1>SIDDHARTH CHAUDHURI</h1>
