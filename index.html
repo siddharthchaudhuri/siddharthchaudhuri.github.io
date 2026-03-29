@@ -52,7 +52,7 @@
     }
 
     .section {
-      padding: 80px 40px;
+      padding: 80px 20px;
       position: relative;
       z-index: 2;
     }
@@ -74,13 +74,12 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    /* CARD */
     .card {
       position: relative;
       overflow: hidden;
@@ -90,7 +89,7 @@
 
     .card img {
       width: 100%;
-      height: 220px;
+      height: 180px;
       object-fit: cover;
       transition: 0.4s;
     }
@@ -105,17 +104,17 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
     }
 
     .card-title {
       font-weight: 800;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .card-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: #ccc;
       opacity: 0;
       transform: translateY(10px);
@@ -186,15 +185,6 @@
       background: #2a2a2a;
     }
 
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
-      font-size: 20px;
-      color: #aaa;
-    }
-
   </style>
 </head>
 
@@ -234,9 +224,7 @@
   </div>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="close" onclick="closeModal()">✕</div>
+<div class="modal" id="modal" onclick="outsideClick(event)">
   <div class="modal-box" id="modalBox"></div>
 </div>
 
@@ -244,6 +232,22 @@
 function openModal(type) {
   const modal = document.getElementById("modal");
   const box = document.getElementById("modalBox");
+
+  if (type === "specAds") {
+    box.innerHTML = `
+      <div class="modal-header">
+        <img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop">
+        <div>
+          <div class="modal-title">Spec Ads</div>
+          <div class="modal-desc">Would've Could've Should've</div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <a class="link" href="https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit?usp=sharing" target="_blank">KFC →</a>
+        <a class="link" href="https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit?usp=sharing" target="_blank">Olly →</a>
+      </div>
+    `;
+  }
 
   if (type === "brand") {
     box.innerHTML = `
@@ -254,10 +258,8 @@ function openModal(type) {
           <div class="modal-desc">Campaign-ready creativity</div>
         </div>
       </div>
-
       <div class="modal-links">
-        <a class="link" href="https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" target="_blank">Bobakat Pitch →</a>
-        <a class="link" href="https://docs.google.com/presentation/d/1TDQfuX41TiGsqTE-CgpwKZTZKHwMeFz-d5djOjakjF8/edit?usp=sharing" target="_blank">Apsara Pitch →</a>
+        <a class="link" href="https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" target="_blank">Bobakat →</a>
       </div>
     `;
   }
@@ -267,6 +269,12 @@ function openModal(type) {
 
 function closeModal() {
   document.getElementById("modal").style.display = "none";
+}
+
+function outsideClick(e) {
+  if (e.target.id === "modal") {
+    closeModal();
+  }
 }
 
 /* STARS */
@@ -284,8 +292,8 @@ let particles = Array.from({length: 150}, () => ({
   x: Math.random()*canvas.width,
   y: Math.random()*canvas.height,
   size: Math.random()*2,
-  vx: (Math.random()-0.5)*0.2,
-  vy: (Math.random()-0.5)*0.2
+  vx: (Math.random()-0.5)*0.24,
+  vy: (Math.random()-0.5)*0.24
 }));
 
 function animate() {
