@@ -1,109 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-margin: 0;
-background: black;
-color: white;
-font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO SECTION */
+
 .hero {
-position: relative;
-height: 100vh;
-overflow: hidden;
-}
-
-#bg {
-position: absolute;
-width: 100%;
-height: 100%;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .hero-content {
-position: relative;
-z-index: 2;
-height: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-white-space: nowrap;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-font-size: clamp(48px, 8vw, 110px);
-margin: 0;
-font-weight: 800;
-text-align: center;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .hero p {
-opacity: 0.6;
-font-size: 18px;
-margin-top: 20px;
+  opacity: 0.6;
+  font-size: 16px;
+  margin-top: 14px;
 }
 
-/* WORK */
-.work {
-padding: 80px 40px;
-text-align: center;
+/* CANVAS (STARS) */
+
+#bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
-.work h2 {
-font-size: 36px;
-margin-bottom: 40px;
+/* PORTFOLIO */
+
+.portfolio {
+  padding: 100px 40px;
+}
+
+.portfolio h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  margin-bottom: 40px;
 }
 
 /* GRID */
-#grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 16px;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* CARDS */
+/* CARD */
+
 .card {
-position: relative;
-border-radius: 12px;
-overflow: hidden;
-cursor: pointer;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 180px;
 }
 
 .card img {
-width: 100%;
-height: 180px;
-object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card-title {
-position: absolute;
-bottom: 10px;
-left: 10px;
-font-weight: bold;
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  font-weight: 600;
+}
+
+.card-desc {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+.card:hover .card-desc {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* MODAL */
+
 .modal {
-position: fixed;
-inset: 0;
-background: rgba(0,0,0,0.9);
-display: none;
-justify-content: center;
-align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .modal-box {
-background: #111;
-padding: 20px;
-width: 90%;
-max-width: 700px;
-border-radius: 12px;
+  background: #111;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.link {
-display: block;
-padding: 12px;
-border: 1px solid #333;
-margin-bottom: 10px;
-color: white;
-text-decoration: none;
+.modal-header {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+}
+
+.modal-header img {
+  width: 120px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modal-title {
+  font-size: 20px;
+}
+
+.modal-sub {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.modal-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.modal-content a {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.modal-content a:hover {
+  background: #2a2a2a;
+}
+
+/* REMOVE LINK COLORS */
+
+a {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
 }
