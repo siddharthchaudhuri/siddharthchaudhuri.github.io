@@ -6,18 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Sections will load here -->
+  <!-- Sections -->
   <div id="hero"></div>
   <div id="portfolio"></div>
   <div id="contact"></div>
   <div id="footer"></div>
 
-  <!-- Script -->
+  <!-- Load Sections -->
+  <script>
+    fetch("hero.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("hero").innerHTML = data);
+
+    fetch("portfolio.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("portfolio").innerHTML = data);
+
+    fetch("contact.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("contact").innerHTML = data);
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 
 </body>
