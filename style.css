@@ -12,11 +12,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================= CONTAINER ================= */
+/* ================= CONTAINER (WIDER) ================= */
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 95%;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -42,9 +42,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   opacity: 0;
-  transform: translateY(20px);
-  transition: 0.8s ease;
+  transform: translateY(30px);
+  transition: all 1s ease;
 }
 
 .hero-content.visible {
@@ -52,51 +53,55 @@ body {
   transform: translateY(0);
 }
 
+/* VERCEL STYLE TEXT */
+
 .hero h1 {
-  font-size: 64px;
-  font-weight: bold;
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 800;
+  letter-spacing: -3px;
   text-align: center;
 }
 
 .hero p {
-  margin-top: 20px;
-  color: #aaa;
-  font-size: 18px;
+  margin-top: 24px;
+  color: rgba(255,255,255,0.6);
+  font-size: clamp(16px, 2vw, 22px);
   text-align: center;
+  max-width: 800px;
 }
 
 /* ================= PORTFOLIO ================= */
 
 .portfolio {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 .section-title {
   text-align: center;
-  font-size: 32px;
-  margin-bottom: 60px;
+  font-size: 36px;
+  margin-bottom: 80px;
 }
 
-/* ================= GROUP (SECTION SPACING FIX) ================= */
+/* ================= SECTION SPACING ================= */
 
 .group {
-  margin: 80px 0;
+  margin: 100px 0;
 }
 
 .group-label {
   text-align: center;
   font-size: 12px;
   letter-spacing: 4px;
-  color: rgba(255,255,255,0.6);
-  margin: 0 0 30px 0;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
 }
 
-/* ================= GRID ================= */
+/* ================= GRID (3 PER ROW) ================= */
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
 /* ================= CARD ================= */
@@ -110,20 +115,20 @@ body {
 
 .card img {
   width: 100%;
-  height: 240px;
+  height: 280px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* overlay */
+/* gradient overlay */
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
 /* hover dark */
@@ -131,7 +136,7 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0);
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .card:hover .card-hover {
@@ -144,10 +149,10 @@ body {
   bottom: 20px;
   left: 20px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
 }
 
-/* description (center hover) */
+/* description */
 .card-description {
   position: absolute;
   inset: 0;
@@ -157,7 +162,8 @@ body {
   text-align: center;
   padding: 20px;
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.4s;
+  font-size: 16px;
 }
 
 .card:hover .card-description {
@@ -169,7 +175,7 @@ body {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: none;
   justify-content: center;
   align-items: center;
@@ -177,11 +183,13 @@ body {
 }
 
 .modal-content {
-  background: #111;
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(20px);
   width: 90%;
-  max-width: 600px;
-  border-radius: 12px;
+  max-width: 650px;
+  border-radius: 16px;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .modal-header {
@@ -191,10 +199,10 @@ body {
 }
 
 .modal-header img {
-  width: 120px;
-  height: 80px;
+  width: 140px;
+  height: 90px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .modal-body {
@@ -207,17 +215,17 @@ body {
 .modal-body a {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  padding: 14px;
   margin-bottom: 10px;
-  background: #1a1a1a;
-  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
   text-decoration: none;
   color: white;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .modal-body a:hover {
-  background: #2a2a2a;
+  background: rgba(255,255,255,0.1);
 }
 
 /* ================= RESPONSIVE ================= */
