@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadSection = async (id, file) => {
     try {
-      const res = await fetch(file);
+      const res = await fetch("./" + file);
+      if (!res.ok) throw new Error("Not found");
       const html = await res.text();
       document.getElementById(id).innerHTML = html;
     } catch (err) {
@@ -10,10 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Load all sections ONCE
+  // ONLY load hero for now
   loadSection("hero", "hero.html");
-  loadSection("portfolio", "portfolio.html");
-  loadSection("contact", "contact.html");
-  loadSection("footer", "footer.html");
 
 });
