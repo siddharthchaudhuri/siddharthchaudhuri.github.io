@@ -12,7 +12,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================= CONTAINER (WIDER) ================= */
+/* ================= CONTAINER ================= */
 
 .container {
   width: 95%;
@@ -53,12 +53,12 @@ body {
   transform: translateY(0);
 }
 
-/* VERCEL STYLE TEXT */
+/* ✅ FIXED HERO TEXT SIZE */
 
 .hero h1 {
-  font-size: clamp(60px, 10vw, 140px);
+  font-size: clamp(48px, 7vw, 100px);
   font-weight: 800;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   text-align: center;
 }
 
@@ -124,7 +124,7 @@ body {
   transform: scale(1.08);
 }
 
-/* gradient overlay */
+/* overlay */
 .card-overlay {
   position: absolute;
   inset: 0;
