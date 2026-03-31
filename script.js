@@ -6,13 +6,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById(id).innerHTML = html;
   };
 
+  // Load sections
   await loadSection("hero", "hero.html");
   await loadSection("portfolio", "portfolio.html");
 
+  // Init hero AFTER load
   initHero();
 
 });
 
+
+/* ================= HERO ================= */
 
 function initHero() {
   const canvas = document.getElementById("hero-canvas");
@@ -86,19 +90,45 @@ function initHero() {
 }
 
 
-/* MODAL DATA */
+/* ================= MODAL DATA ================= */
+
 const data = {
+
   specAds: {
     title: "Spec Ads",
     desc: "Would've Could've Should've",
     img: "https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop",
     links: [
       { title: "KFC | English", url: "https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit" },
-      { title: "Olly | English", url: "https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit" }
+      { title: "Olly | English", url: "https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit" },
+      { title: "Casper | English", url: "https://docs.google.com/presentation/d/1crgikIbC654uu3lt7T_iRd4a0NzFRAmNOu5PUzejw2M/edit" }
+    ]
+  },
+
+  brandPitches: {
+    title: "Brand Pitches",
+    desc: "Campaign-ready creativity",
+    img: "https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171&auto=format&fit=crop",
+    links: [
+      { title: "Bobakat Pitch", url: "#" },
+      { title: "Apsara Pitch", url: "#" }
+    ]
+  },
+
+  socialMedia: {
+    title: "Social Media Campaigns",
+    desc: "Scroll-stopping ideas and copy",
+    img: "https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974&auto=format&fit=crop",
+    links: [
+      { title: "CG Campaign", url: "#" },
+      { title: "Bobakat Campaign", url: "#" }
     ]
   }
+
 };
 
+
+/* ================= MODAL FUNCTIONS ================= */
 
 function openModal(key) {
   const modal = document.getElementById("modal");
