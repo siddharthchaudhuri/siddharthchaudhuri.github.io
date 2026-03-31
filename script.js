@@ -1,20 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
   const loadSection = async (id, file) => {
-    try {
-      const res = await fetch("./" + file);
-      const html = await res.text();
-      document.getElementById(id).innerHTML = html;
-    } catch (err) {
-      console.error(`Error loading ${file}:`, err);
-    }
+    const res = await fetch("./" + file);
+    const html = await res.text();
+    document.getElementById(id).innerHTML = html;
   };
 
-  // Load sections
   await loadSection("hero", "hero.html");
   await loadSection("portfolio", "portfolio.html");
 
-  // Init hero AFTER load
   initHero();
 
 });
@@ -89,4 +83,48 @@ function initHero() {
     const content = document.querySelector(".hero-content");
     if (content) content.classList.add("visible");
   }, 100);
+}
+
+
+/* MODAL DATA */
+const data = {
+  specAds: {
+    title: "Spec Ads",
+    desc: "Would've Could've Should've",
+    img: "https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop",
+    links: [
+      { title: "KFC | English", url: "https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit" },
+      { title: "Olly | English", url: "https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit" }
+    ]
+  }
+};
+
+
+function openModal(key) {
+  const modal = document.getElementById("modal");
+  const d = data[key];
+
+  document.getElementById("modal-title").innerText = d.title;
+  document.getElementById("modal-desc").innerText = d.desc;
+  document.getElementById("modal-img").src = d.img;
+
+  const linksContainer = document.getElementById("modal-links");
+  linksContainer.innerHTML = "";
+
+  d.links.forEach(link => {
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.target = "_blank";
+    a.innerHTML = `${link.title} <span>→</span>`;
+    linksContainer.appendChild(a);
+  });
+
+  modal.style.display = "flex";
+}
+
+
+function closeModal(e) {
+  if (e.target.id === "modal") {
+    document.getElementById("modal").style.display = "none";
+  }
 }
