@@ -15,7 +15,7 @@ body {
 /* CONTAINER */
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -60,7 +60,108 @@ body {
   max-width: 800px;
 }
 
-/* SIMPLE FADE-IN */
+/* PORTFOLIO */
+.portfolio {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.group-label {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* CARD */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  height: 250px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* DARK OVERLAY */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* HOVER DARKEN */
+.card-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: 0.3s;
+}
+
+.card:hover .card-hover {
+  background: rgba(0,0,0,0.5);
+}
+
+/* TITLE */
+.card-title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+/* DESCRIPTION (HOVER TEXT) */
+.card-description {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.card:hover .card-description {
+  opacity: 1;
+}
+
+/* FADE-IN */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
