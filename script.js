@@ -10,10 +10,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  // Load hero first
+  // Load sections
   await loadSection("hero", "hero.html");
+  await loadSection("portfolio", "portfolio.html");
 
-  // 👉 INIT HERO AFTER IT LOADS
+  // Init hero AFTER load
   initHero();
 
 });
@@ -84,7 +85,6 @@ function initHero() {
   initParticles();
   animate();
 
-  // fade-in
   setTimeout(() => {
     const content = document.querySelector(".hero-content");
     if (content) content.classList.add("visible");
