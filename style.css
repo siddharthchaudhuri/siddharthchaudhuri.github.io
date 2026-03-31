@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+/* ================= GLOBAL ================= */
 
 * {
   margin: 0;
@@ -7,17 +7,15 @@
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: black;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ================= CONTAINER ================= */
-
 .container {
-  width: 95%;
-  max-width: 1400px;
-  margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* ================= HERO ================= */
@@ -25,90 +23,70 @@ body {
 .hero {
   position: relative;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
 }
 
-#hero-canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-
-.hero-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ✅ FIXED HERO TEXT SIZE */
-
 .hero h1 {
-  font-size: clamp(48px, 7vw, 100px);
+  font-size: 72px;
   font-weight: 800;
   letter-spacing: -2px;
-  text-align: center;
 }
 
 .hero p {
-  margin-top: 24px;
-  color: rgba(255,255,255,0.6);
-  font-size: clamp(16px, 2vw, 22px);
-  text-align: center;
-  max-width: 800px;
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* GRID BACKGROUND */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
 }
 
 /* ================= PORTFOLIO ================= */
 
 .portfolio {
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
 .section-title {
+  font-size: 42px;
+  margin-bottom: 40px;
   text-align: center;
-  font-size: 36px;
+}
+
+.group {
   margin-bottom: 80px;
 }
 
-/* ================= SECTION SPACING ================= */
-
-.group {
-  margin: 100px 0;
-}
-
 .group-label {
-  text-align: center;
+  color: #888;
+  margin-bottom: 20px;
+  text-transform: uppercase;
   font-size: 12px;
-  letter-spacing: 4px;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 40px;
+  letter-spacing: 2px;
 }
 
-/* ================= GRID (3 PER ROW) ================= */
-
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 24px;
 }
 
-/* ================= CARD ================= */
-
+/* CARD */
 .card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -117,57 +95,36 @@ body {
   width: 100%;
   height: 280px;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 
-.card:hover img {
-  transform: scale(1.08);
-}
-
-/* overlay */
+/* OVERLAY */
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, black, transparent);
+  opacity: 0.7;
 }
 
-/* hover dark */
-.card-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0);
-  transition: 0.4s;
-}
-
-.card:hover .card-hover {
-  background: rgba(0,0,0,0.5);
-}
-
-/* title */
 .card-title {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-/* description */
 .card-description {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  bottom: 0;
+  left: 20px;
+  font-size: 14px;
   opacity: 0;
-  transition: 0.4s;
-  font-size: 16px;
+  transition: 0.3s;
 }
 
 .card:hover .card-description {
   opacity: 1;
+  bottom: 40px;
 }
 
 /* ================= MODAL ================= */
@@ -175,149 +132,48 @@ body {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.8);
   display: none;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+  padding: 20px;
 }
 
 .modal-content {
-  background: rgba(20,20,20,0.95);
-  backdrop-filter: blur(20px);
-  width: 90%;
-  max-width: 650px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.modal-header {
-  display: flex;
-  gap: 15px;
+  background: #111;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
   padding: 20px;
 }
 
 .modal-header img {
-  width: 140px;
-  height: 90px;
-  object-fit: cover;
+  width: 100%;
   border-radius: 10px;
-}
-
-.modal-body {
-  padding: 20px;
-  max-height: 60vh;
-  overflow-y: auto;
-}
-
-/* modal links */
-.modal-body a {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px;
   margin-bottom: 10px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
+}
+
+.modal-body a {
+  display: block;
+  margin-top: 10px;
+  color: #aaa;
   text-decoration: none;
-  color: white;
-  transition: 0.3s;
 }
 
 .modal-body a:hover {
-  background: rgba(255,255,255,0.1);
+  color: white;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-}
 /* ================= CONTACT ================= */
 
 .contact {
-  padding: 100px 0;
-  background: #111;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.contact-subtext {
-  color: #aaa;
-  margin-bottom: 40px;
-}
-
-.contact-list {
-  max-width: 400px;
-  margin: auto;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.contact-item:hover {
-  background: #2a2a2a;
-}
-
-.contact-item img {
-  width: 28px;
-  height: 28px;
-}
-
-/* ================= FOOTER ================= */
-
-.footer {
-  border-top: 1px solid #222;
-  padding: 30px 0;
-  background: black;
-}
-
-.footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-text {
-  color: #777;
-  font-size: 14px;
-}
-
-.footer-link a {
-  color: #777;
-  text-decoration: none;
-}
-
-.footer-link a:hover {
-  color: white;
-}
-/* CONTACT BACKGROUND GRID (OLD DESIGN FIX) */
-.contact {
-  position: relative;
-  overflow: hidden;
-}
-
+/* GRID BACKGROUND */
 .contact-bg {
   position: absolute;
   inset: 0;
@@ -330,38 +186,89 @@ body {
 .contact .container {
   position: relative;
   z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* CONTACT STYLING IMPROVEMENTS */
+/* TITLE */
+.contact .section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* SUBTEXT */
+.contact-subtext {
+  color: #aaa;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* LIST */
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 40px;
+  gap: 16px;
 }
 
+/* ITEM */
 .contact-item {
   display: flex;
   align-items: center;
   gap: 16px;
   background: #1a1a1a;
-  padding: 18px 20px;
+  padding: 16px 20px;
   border-radius: 12px;
   text-decoration: none;
   color: white;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-item:hover {
   background: #2a2a2a;
+  transform: translateY(-2px);
 }
 
+/* ICON */
 .contact-item img {
   width: 28px;
   height: 28px;
 }
 
-.contact-subtext {
-  color: #aaa;
-  margin-top: 10px;
+/* ================= FOOTER ================= */
+
+footer {
+  border-top: 1px solid #222;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #888;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
 }
