@@ -3,14 +3,13 @@
 
     <h2 class="section-title">My Work</h2>
 
-    <!-- GROUP -->
     <div class="group">
       <div class="group-label">Creativity Zone</div>
 
       <div class="grid">
 
-        <!-- CARD -->
-        <div class="card">
+        <!-- SPEC ADS CARD -->
+        <div class="card" onclick="openModal('specAds')">
           <img src="https://images.unsplash.com/photo-1580907826414-5345a5aa68ad?q=80&w=1074&auto=format&fit=crop">
           <div class="card-overlay"></div>
           <div class="card-hover"></div>
@@ -22,34 +21,26 @@
           </div>
         </div>
 
-        <!-- CARD -->
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=1171&auto=format&fit=crop">
-          <div class="card-overlay"></div>
-          <div class="card-hover"></div>
-
-          <div class="card-title">Brand Pitches</div>
-
-          <div class="card-description">
-            Campaign-ready creativity
-          </div>
-        </div>
-
-        <!-- CARD -->
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1553532435-93d532a45f15?q=80&w=1974&auto=format&fit=crop">
-          <div class="card-overlay"></div>
-          <div class="card-hover"></div>
-
-          <div class="card-title">Social Media Campaigns</div>
-
-          <div class="card-description">
-            Scroll-stopping ideas and copy
-          </div>
-        </div>
-
       </div>
     </div>
 
   </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+
+      <div class="modal-header">
+        <img id="modal-img" src="">
+        <div>
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+        </div>
+      </div>
+
+      <div class="modal-body" id="modal-links"></div>
+
+    </div>
+  </div>
+
 </section>
