@@ -334,3 +334,120 @@ const modalData = {
       }
     ]
   },
+  /* ================= EXTENDED SKILLS ================= */
+
+  reels: {
+    title: "Reels",
+    desc: "Tiny films with big feelings",
+    img: "https://images.unsplash.com/photo-1485846234645-a62644f84728",
+    items: [
+      { title: "Bobakat - Christmas Week", url: "https://drive.google.com/file/d/12trTbC9ASrZSRy9eZB8I6VLzOGQtcexw/view?usp=sharing" },
+      { title: "Bold & Bae - Lonely", url: "https://drive.google.com/file/d/1fqUlwK77s-aBW5nihfzeZcrdAJM0dHsP/view" },
+      { title: "Bold & Bae - No Way", url: "https://drive.google.com/file/d/1JBkvQzVRe4gy_ziCpA4MMdaBLmqTnPdQ/view" },
+      { title: "Brandniti - Watchu Doin", url: "https://drive.google.com/file/d/1fcE0CMoIcts-OeMuDv_Ve5nLrcS6NJPu/view" },
+      { title: "Stratzy - Informational", url: "https://drive.google.com/file/d/1Li9RXWOpYNmN-QJlf39CqNjwtIQidIwt/view" },
+      { title: "Stratzy - Promotional", url: "https://drive.google.com/file/d/1LngSO56Qrsfelb2h9RBT3NVVP4W1Mcai/view" },
+      { title: "Stratzy - Windows SFX", url: "https://drive.google.com/file/d/1MAdSYeblDX7g8EIyTpOY6ZT-8QdfaIPl/view" },
+      { title: "Stratzy - Reporter Scam", url: "https://drive.google.com/file/d/1aMjCM9h5_GgvP8yP8qoFYZ6PMWJKe3GE/view" }
+    ]
+  },
+
+  press: {
+    title: "Press Release and Media Profile",
+    desc: "Brand stories, told to the world",
+    img: "https://images.unsplash.com/photo-1504711434969-e33886168f5c",
+    items: [
+      { title: "Fraganta Media Profile", url: "https://docs.google.com/document/d/1M8SziAGlFiP7q4sRxWnRk_6m36OOpJxk/edit" },
+      { title: "Supersox - 40 Under", url: "https://docs.google.com/document/d/1oYnz4SGVI99oR035jFSFeJLGGQxXIqXQ/edit" },
+      { title: "SuperSox - Budget Quote", url: "https://docs.google.com/document/d/1e94eBnKoFyXkO6L1FcBoz8X_W67-9eYz/edit" },
+      { title: "SuperSox - Company Profile", url: "https://docs.google.com/document/d/1u00qP1tFpjZd6iRrxOFzGsAVCSvQrO4b/edit" },
+      { title: "VIP - Chaddi Pe Gaddi PR", url: "https://docs.google.com/document/d/17Z2Ig_kjDm1mkaKJefB0Fnt2mhOzKj-l/edit" },
+      { title: "VIP - Kerala Blasters PR", url: "https://docs.google.com/document/d/1sD-irov1c-5TBOl-WgkaJC2uJQbT-zNa/edit" }
+    ]
+  },
+
+  internal: {
+    title: "Internal Communication",
+    desc: "Where company messages find heart",
+    img: "https://images.unsplash.com/photo-1521790361543-f645cf042ec4",
+    items: [
+      { title: "CACTUS - Caffeine Conversations", url: "https://drive.google.com/file/d/1KKQdtXdPWisKd27XvbTeNcqdrPhmS-cD/view" },
+      { title: "HUL - Paani Ki Kahani", url: "https://drive.google.com/file/d/18KOttyIJNVkgxZYxRPEN272_qMrZph6y/view" },
+      { title: "Radix - Rewards Mailer", url: "https://drive.google.com/file/d/1Qek6RQArCsRPaai3vp3bH7cnX06j_96_/view" },
+      { title: "Writer Corp - LinkedIn Learning", url: "https://drive.google.com/file/d/1waE2dxOvyfmbvjkCVfJolysMh_x3XG8i/view" },
+      { title: "ZEE - Voting Phase 7", url: "https://drive.google.com/file/d/1M4dnVIg3pRMsdrWNSUDjBdnQ9eO--soc/view" },
+      { title: "ZEE5 - Blood Donation", url: "https://drive.google.com/file/d/1-IeQuy4uYwGOT4zZX8QlWrVF8nxqSyjx/view" }
+    ]
+  },
+
+  chatbot: {
+    title: "Chatbot Script",
+    desc: "Conversations with character",
+    img: "https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5",
+    items: [
+      { title: "Jadika Cargo Agencies - Chatbot Script", url: "https://drive.google.com/file/d/1KfWd0byplIF0R9E8IOQX74oWs2LaUyBn/view" }
+    ]
+  },
+
+  merch: {
+    title: "Merchandise",
+    desc: "Reppable designs",
+    img: "https://images.unsplash.com/photo-1642294490133-632a5b3bd36a",
+    items: [
+      { title: "Never Grow Up - Don’t Assume Gender", url: "https://drive.google.com/file/d/1A5jottwIe6xYgq2OZqfRlI7ueiNRuueL/view" },
+      { title: "Never Grow Up - Non Binary", url: "https://drive.google.com/file/d/181cS7yB_SDqcfaFrPblQ04JqxhhywxGW/view" },
+      { title: "Never Grow Up - Genderfluid", url: "https://drive.google.com/file/d/1yTz-HoSs6eHwTvB4jkECSZUi9giNiHZZ/view" }
+    ]
+  }
+
+};
+
+
+/* ================= MODAL LOGIC ================= */
+
+function openModal(key) {
+  const d = modalData[key];
+
+  document.getElementById("modal-title").innerText = d.title;
+  document.getElementById("modal-desc").innerText = d.desc;
+  document.getElementById("modal-img").src = d.img;
+
+  const container = document.getElementById("modal-links");
+  container.innerHTML = "";
+
+  if (d.subsections) {
+    d.subsections.forEach(sub => {
+      const h = document.createElement("h4");
+      h.innerText = sub.title;
+      h.style.margin = "15px 0 5px";
+      h.style.opacity = "0.6";
+      container.appendChild(h);
+
+      sub.items.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.target = "_blank";
+        a.innerHTML = item.title + " →";
+        container.appendChild(a);
+      });
+    });
+  } else {
+    d.items.forEach(item => {
+      const a = document.createElement("a");
+      a.href = item.url;
+      a.target = "_blank";
+      a.innerHTML = item.title + " →";
+      container.appendChild(a);
+    });
+  }
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(e) {
+  if (e.target.id === "modal") {
+    document.getElementById("modal").style.display = "none";
+  }
+}
+
+</script>
