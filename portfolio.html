@@ -133,7 +133,147 @@
           <div class="card-title">Chatbot Script</div>
           <div class="card-description">Conversations with character</div>
         </div>
+  <!-- ================= MODALS ================= -->
 
+  <!-- MODAL CONTAINER -->
+  <div id="modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+
+      <div class="modal-header">
+        <img id="modal-img" src="">
+        <div>
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+        </div>
+      </div>
+
+      <div class="modal-body" id="modal-links"></div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+
+/* ================= FULL DATA ================= */
+
+const modalData = {
+
+  specAds: {
+    title: "Spec Ads",
+    desc: "Would've Could've Should've",
+    img: "https://images.unsplash.com/photo-1580907826414-5345a5aa68ad",
+    items: [
+      { title: "KFC | English", url: "https://docs.google.com/presentation/d/1TkJzWFiDSZduiwr3WXeuj_yAXJZtJxYgHU42grRExqI/edit" },
+      { title: "Olly | English", url: "https://docs.google.com/presentation/d/16x3HOnKIveE58Q9ZbIfTcsfx3tBBBOJkAvLMkrJ5siI/edit" },
+      { title: "Casper | English", url: "https://docs.google.com/presentation/d/1crgikIbC654uu3lt7T_iRd4a0NzFRAmNOu5PUzejw2M/edit" }
+    ]
+  },
+
+  brandPitches: {
+    title: "Brand Pitches",
+    desc: "Campaign-ready creativity",
+    img: "https://images.unsplash.com/photo-1549281899-f75600a24107",
+    items: [
+      { title: "Bobakat Pitch", url: "https://docs.google.com/presentation/d/1wmT9WiZ8lD6SsX0PZKAoiy7hvcKYXyiU/edit" },
+      { title: "Apsara Pitch", url: "https://docs.google.com/presentation/d/1TDQfuX41TiGsqTE-CgpwKZTZKHwMeFz-d5djOjakjF8/edit" },
+      { title: "Tribe Pitch", url: "https://docs.google.com/presentation/d/1VzPZtLMSkiCoS4hv1BNO2NztnfvVyu5NAQ9DLlYxcWI/edit" }
+    ]
+  },
+
+  socialMedia: {
+    title: "Social Media Campaigns & Creatives",
+    desc: "Scroll-stopping ideas and copy",
+    img: "https://images.unsplash.com/photo-1553532435-93d532a45f15",
+    subsections: [
+      {
+        title: "Campaigns",
+        items: [
+          { title: "CG Independence Day", url: "https://docs.google.com/presentation/d/1hpN0wRj3HFa3JQN8mgGYw890vykHbWmhOCOnyRbtKcI/edit" },
+          { title: "Bobakat Valentine", url: "https://docs.google.com/presentation/d/1M3NuDMqUNMQvFfp14LT65TLzXwowFORQnr7MbxGww7U/edit" }
+        ]
+      },
+      {
+        title: "Posts",
+        items: [
+          { title: "Amazon Bazaar", url: "https://drive.google.com/file/d/1OG6CC1BJ0LIuDrKl24ggiQ_s5bqjgiGp/view" }
+        ]
+      }
+    ]
+  },
+
+  ai: {
+    title: "AI Music & Videos",
+    desc: "Artificial Intelligence meets Authentic Emotion",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfQ64HCB6G8Ox2LeapjadP2AKLArIkEZE8Xw",
+    items: [
+      { title: "Aposan Film", url: "https://drive.google.com/file/d/1te-UvFs0b5fLTq3B-boPrTC6sZdp1b9P/view" }
+    ]
+  },
+
+  web: {
+    title: "Website & App",
+    desc: "Digital spaces with soul",
+    img: "https://mockuptree.com/wp-content/uploads/edd/2018/12/Web-Showcase-Mockup-Creator.jpg",
+    items: [
+      { title: "Bold & Bae Website", url: "https://drive.google.com/file/d/1WYMGQglIuxFIaKci0Tkyk4fJWAhDCMc6/view" }
+    ]
+  }
+
+};
+
+
+/* ================= MODAL LOGIC ================= */
+
+function openModal(key) {
+  const d = modalData[key];
+
+  document.getElementById("modal-title").innerText = d.title;
+  document.getElementById("modal-desc").innerText = d.desc;
+  document.getElementById("modal-img").src = d.img;
+
+  const container = document.getElementById("modal-links");
+  container.innerHTML = "";
+
+  if (d.subsections) {
+    d.subsections.forEach(sub => {
+
+      const h = document.createElement("h4");
+      h.innerText = sub.title;
+      h.style.margin = "15px 0 5px";
+      h.style.opacity = "0.6";
+      container.appendChild(h);
+
+      sub.items.forEach(item => {
+        const a = document.createElement("a");
+        a.href = item.url;
+        a.target = "_blank";
+        a.innerHTML = item.title + " →";
+        container.appendChild(a);
+      });
+
+    });
+  } else {
+    d.items.forEach(item => {
+      const a = document.createElement("a");
+      a.href = item.url;
+      a.target = "_blank";
+      a.innerHTML = item.title + " →";
+      container.appendChild(a);
+    });
+  }
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal(e) {
+  if (e.target.id === "modal") {
+    document.getElementById("modal").style.display = "none";
+  }
+}
+
+</script>
       </div>
     </div>
 
