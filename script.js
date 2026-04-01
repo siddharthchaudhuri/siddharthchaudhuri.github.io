@@ -321,12 +321,7 @@ window.openModal = function(key) {
       h.style.opacity = "0.6";
       container.appendChild(h);
 
-    a.className = "modal-item";
-
-a.innerHTML = `
-  <span>${item.title}</span>
-  <span class="arrow">→</span>
-`;
+      sub.items.forEach(item => {
         const a = document.createElement("a");
         a.href = item.url;
         a.target = "_blank";
@@ -335,12 +330,7 @@ a.innerHTML = `
       });
     });
   } else {
-    a.className = "modal-item";
-
-a.innerHTML = `
-  <span>${item.title}</span>
-  <span class="arrow">→</span>
-`;
+    d.items.forEach(item => {
       const a = document.createElement("a");
       a.href = item.url;
       a.target = "_blank";
