@@ -321,7 +321,12 @@ window.openModal = function(key) {
       h.style.opacity = "0.6";
       container.appendChild(h);
 
-      sub.items.forEach(item => {
+    a.className = "modal-item";
+
+a.innerHTML = `
+  <span>${item.title}</span>
+  <span class="arrow">→</span>
+`;
         const a = document.createElement("a");
         a.href = item.url;
         a.target = "_blank";
@@ -330,7 +335,12 @@ window.openModal = function(key) {
       });
     });
   } else {
-    d.items.forEach(item => {
+    a.className = "modal-item";
+
+a.innerHTML = `
+  <span>${item.title}</span>
+  <span class="arrow">→</span>
+`;
       const a = document.createElement("a");
       a.href = item.url;
       a.target = "_blank";
