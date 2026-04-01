@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 /* ================= HERO ================= */
 
 function initHero() {
-  const canvas = document.getElementById("hero-canvas");
+  const canvas = document.getElementById("particles");
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
