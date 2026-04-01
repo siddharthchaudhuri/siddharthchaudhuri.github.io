@@ -1,6 +1,75 @@
 <section class="hero">
+
+  <!-- PARTICLE CANVAS -->
+  <canvas id="particles"></canvas>
+
+  <!-- CONTENT -->
   <div class="hero-content">
-    <h1>SIDDHARTH<br>CHAUDHURI</h1>
-    <p>Copywriter, Campaign Creator, AI Enthusiast, Idea Factory.</p>
+    <h1>
+      SIDDHARTH <br />
+      CHAUDHURI
+    </h1>
+
+    <p>
+      Copywriter, Campaign Creator, AI Enthusiast, Idea Factory.
+    </p>
   </div>
+
 </section>
+
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for (let i = 0; i < 120; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2,
+    d: Math.random() * 1
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "white";
+  ctx.globalAlpha = 0.2;
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  update();
+}
+
+function update() {
+  particles.forEach(p => {
+    p.y -= p.d;
+
+    if (p.y < 0) {
+      p.y = canvas.height;
+      p.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function loop() {
+  draw();
+  requestAnimationFrame(loop);
+}
+
+loop();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
