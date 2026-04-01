@@ -11,10 +11,10 @@ body {
   color: white;
 }
 
-/* CONTAINER */
+/* CONTAINER (FIX SIDE SPACING) */
 .container {
-  width: 90%;
-  max-width: 1100px;
+  width: 96%; /* was 90% */
+  max-width: 1400px; /* wider */
   margin: auto;
 }
 
@@ -27,18 +27,44 @@ body {
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* FLOATING PARTICLES */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  animation: floatParticles 20s linear infinite;
+}
+
+@keyframes floatParticles {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200px);
+  }
 }
 
 .hero h1 {
   font-size: 90px;
   font-weight: 800;
   line-height: 1.1;
+  position: relative;
+  z-index: 2;
 }
 
 .hero p {
   margin-top: 20px;
   font-size: 18px;
   color: #aaa;
+  position: relative;
+  z-index: 2;
 }
 
 /* ================= SECTION TITLE ================= */
@@ -66,18 +92,18 @@ body {
   margin-bottom: 100px;
 }
 
-/* GRID = 3 PER ROW */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 30px;
 }
 
 /* CARD */
 .card {
   position: relative;
-  height: 260px;
-  border-radius: 14px;
+  height: 280px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -88,41 +114,55 @@ body {
   object-fit: cover;
 }
 
-/* DARK OVERLAY */
+/* BASE OVERLAY */
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.3);
 }
 
-/* HOVER EFFECT */
+/* HOVER DARK */
 .card-hover {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   opacity: 0;
   transition: 0.3s;
 }
 
+/* SHOW ON HOVER */
 .card:hover .card-hover {
   opacity: 1;
 }
 
-/* TEXT */
+/* TITLE ALWAYS VISIBLE */
 .card-title {
   position: absolute;
-  bottom: 50px;
+  bottom: 25px;
   left: 20px;
   font-size: 20px;
   font-weight: bold;
+  z-index: 2;
 }
 
+/* DESCRIPTION HIDDEN BY DEFAULT */
 .card-description {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 20px;
   font-size: 14px;
   color: #ccc;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+  z-index: 2;
+}
+
+/* SHOW DESCRIPTION ONLY ON HOVER */
+.card:hover .card-description {
+  opacity: 1;
+  transform: translateY(0);
+  bottom: 10px;
 }
 
 /* ================= MODAL ================= */
@@ -191,14 +231,12 @@ body {
   z-index: 2;
 }
 
-/* CONTACT TEXT */
 .contact-subtext {
   text-align: center;
   color: #aaa;
   margin-top: 10px;
 }
 
-/* CONTACT LIST */
 .contact-list {
   max-width: 500px;
   margin: 40px auto 0;
@@ -207,7 +245,6 @@ body {
   gap: 20px;
 }
 
-/* CONTACT ITEM */
 .contact-item {
   display: flex;
   align-items: center;
