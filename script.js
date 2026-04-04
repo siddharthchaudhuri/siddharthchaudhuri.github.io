@@ -293,6 +293,7 @@ aiPhotoshoot: {
 flex: {
   title: "Humble Flex",
   desc: "Side Quests",
+  img: "https://images.unsplash.com/photo-1636318611039-5f47e53556b1?q=80&w=1170&auto=format&fit=crop",
   items: [
     { title: "Featured in Moment Marketing Pages", url: "https://drive.google.com/file/d/1SRm0nia5EsWCmA0udwSik8bFSA-q0TBL/view?usp=drive_link" },
     { title: "Won India's Got Latent", url: "https://drive.google.com/file/d/1mp7tWtkr2Ga9kvogoDPDIyK22edUcswI/view?usp=sharing" },
