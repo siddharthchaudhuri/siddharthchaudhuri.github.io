@@ -228,7 +228,73 @@ window.modalData = {
       }
     ]
   },
+aiCreatives: {
+  title: "AI Creatives",
+  desc: "Written and Designed by me",
+  img: "",
+  items: [
+    { title: "Camlin - Creatives", url: "https://drive.google.com/file/d/1li40S0sqna2K-NgsqQAI0ZDPk6xcnwD6/view?usp=drivesdk" },
+    { title: "Surabhi - Creatives", url: "https://drive.google.com/file/d/10l2qjy8xWe7Sn4kH7POyVC80rTgKuiI2/view?usp=drivesdk" },
+    { title: "Apsara - Frames", url: "https://drive.google.com/file/d/10YcNqIxyG1NJxYhcAogf8bSuWfzfad1n/view?usp=drivesdk" },
+    { title: "Freya - Creatives", url: "https://drive.google.com/file/d/1vFoxNOLNVodQufqQy1J76kUjaUASjhzC/view?usp=drivesdk" }
+  ]
+},
 
+aiFilm: {
+  title: "AI Brand Film",
+  desc: "Lights. Camera. AI.",
+  img: "",
+  items: [
+    { title: "Aposan - Brand Film", url: "https://drive.google.com/file/d/1te-UvFs0b5fLTq3B-boPrTC6sZdp1b9P/view?usp=drivesdk" }
+  ]
+},
+
+aiClips: {
+  title: "AI Brand Clips",
+  desc: "A lil this, A lil that",
+  items: [
+    { title: "Bobakat - Valentine's Week", url: "https://docs.google.com/presentation/d/1AgmS8-2WNuu13_2z5czLpLm6e_kMBoKYccSNoGqmQQE/edit?usp=drivesdk" },
+    { title: "Winn – Halloween", url: "https://drive.google.com/file/d/1grUCan7Dj2Vl1YqRt4hPBh1kz1lXeydI/view?usp=drivesdk" },
+    { title: "CG – Onam AI Video", url: "https://drive.google.com/file/d/1VlAraBgDZgHZM9G_CJ0O8EP6x5JcVri-/view?usp=drivesdk" },
+    { title: "CG – Ganpati AI Video", url: "https://drive.google.com/file/d/1kMd0XaMqv0FvKcJZjq1U-kGdkex8P7ZB/view?usp=drivesdk" },
+    { title: "Camlin - Astronaut Dreams", url: "https://drive.google.com/file/d/1HILoxH1vQaKmkw7UyE72iSyFsb-TyGhG/view?usp=drivesdk" }
+  ]
+},
+
+aiAnthems: {
+  title: "AI Anthems",
+  desc: "Let the brand sing",
+  items: [
+    { title: "Tribe - Brand Anthem", url: "https://drive.google.com/file/d/14HVn4D2_z0ZshJCDJhUMx18FnBxlYiR7/view?usp=drivesdk" },
+    { title: "Tribe - Campaign Anthem", url: "https://drive.google.com/file/d/1rHx5EE9A8mT4h45oJ-bPrnyIolSjh0la/view?usp=drivesdk" },
+    { title: "2baconil - Christmas Anthem", url: "https://drive.google.com/file/d/14avLECU38i3Osfue-5GAvFb0Ilo0qaUE/view?usp=drivesdk" },
+    { title: "CG - New Year Anthem", url: "https://drive.google.com/file/d/1enf1Mf1Ptpa0_BD_ixeuVMfQs1zMhNQO/view?usp=drivesdk" },
+    { title: "Winnn – Anthem", url: "https://drive.google.com/file/d/1juTog6a4Ewm9t5W1nbHOxdtlpvHnv1P_/view?usp=drivesdk" },
+    { title: "Fraganta – Heer Ranjha Anthem", url: "https://drive.google.com/file/d/1aptBKxYHifuTPjTOY9pqX3gGuU92viJj/view?usp=drivesdk" },
+    { title: "Fraganta – Jogi Anthem", url: "https://drive.google.com/file/d/19XOnzBwzm9877ODNgSrs4DiAbsQMxjN4/view?usp=drivesdk" },
+    { title: "CG – Diwali Anthem", url: "https://drive.google.com/file/d/11MZDR5agfSgcXDMn8N6-2lHca8hjZpZI/view?usp=drivesdk" }
+  ]
+},
+
+aiPhotoshoot: {
+  title: "AI Photoshoot",
+  desc: "Say Cheese",
+  items: [
+    { title: "Gut2Go", url: "https://docs.google.com/presentation/d/1_8aLEreHGcTlGm82DG7RUbvyEzkttId7D7uhDjZqsDM/edit?usp=sharing" },
+    { title: "Apsara Ice Creams", url: "https://docs.google.com/presentation/d/1XRJnPkzv72cvE-rLXbcZFrJVDtGe1aq_QokURpVlnVY/edit?usp=sharing" },
+    { title: "Signature", url: "https://docs.google.com/presentation/d/1eQvm7oxEqp85YTzEkTZJk56iQdN62yBj1MNCGRlEzkk/edit?usp=sharing" }
+  ]
+},
+
+flex: {
+  title: "Humble Flex",
+  desc: "Side Quests",
+  items: [
+    { title: "Featured in Moment Marketing Pages", url: "https://drive.google.com/file/d/1SRm0nia5EsWCmA0udwSik8bFSA-q0TBL/view?usp=drive_link" },
+    { title: "Won India's Got Latent", url: "https://drive.google.com/file/d/1mp7tWtkr2Ga9kvogoDPDIyK22edUcswI/view?usp=sharing" },
+    { title: "Gaming Sniper Montage", url: "https://www.youtube.com/watch?v=9IcklVNhUjM" }
+  ]
+}
   reels: {
     title: "Reels",
     desc: "Tiny films with big feelings",
