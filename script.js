@@ -1,4 +1,3 @@
-window.openModal = window.openModal;
 /* ================= LOAD SECTIONS ================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -297,7 +296,7 @@ flex: {
     { title: "Won India's Got Latent", url: "https://drive.google.com/file/d/1mp7tWtkr2Ga9kvogoDPDIyK22edUcswI/view?usp=sharing" },
     { title: "Gaming Sniper Montage", url: "https://www.youtube.com/watch?v=9IcklVNhUjM" }
   ]
-}
+},
   reels: {
     title: "Reels",
     desc: "Tiny films with big feelings",
@@ -377,7 +376,7 @@ window.openModal = function(key) {
 
   document.getElementById("modal-title").innerText = d.title;
   document.getElementById("modal-desc").innerText = d.desc;
-  document.getElementById("modal-img").src = d.img;
+ document.getElementById("modal-img").src = d.img || "";
 
   const container = document.getElementById("modal-links");
   container.innerHTML = "";
