@@ -403,15 +403,21 @@ a.innerHTML = `
         container.appendChild(a);
       });
     });
-  } else {
-    d.items.forEach(item => {
-      const a = document.createElement("a");
-      a.href = item.url;
-      a.target = "_blank";
-      a.innerHTML = item.title + " →";
-      container.appendChild(a);
-    });
-  }
+ } else {
+  d.items.forEach(item => {
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.className = "modal-link";
+
+    a.innerHTML = `
+      <span>${item.title}</span>
+      <span class="arrow">→</span>
+    `;
+
+    container.appendChild(a);
+  });
+}
 
   document.getElementById("modal").style.display = "flex";
 };
