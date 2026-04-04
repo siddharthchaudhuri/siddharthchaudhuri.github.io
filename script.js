@@ -1,3 +1,4 @@
+window.openModal = window.openModal;
 /* ================= LOAD SECTIONS ================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -230,7 +231,7 @@ window.modalData = {
   },
 aiCreatives: {
   title: "AI Creatives",
-  desc: "Written and Designed by me",
+  desc: "Written and Designed by moi",
   img: "",
   items: [
     { title: "Camlin - Creatives", url: "https://drive.google.com/file/d/1li40S0sqna2K-NgsqQAI0ZDPk6xcnwD6/view?usp=drivesdk" },
