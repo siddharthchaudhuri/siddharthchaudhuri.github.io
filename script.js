@@ -233,7 +233,7 @@ window.modalData = {
 aiCreatives: {
   title: "AI Creatives",
   desc: "Written and Designed by moi",
-  img: "",
+  img: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960",
   items: [
     { title: "Camlin - Creatives", url: "https://drive.google.com/file/d/1li40S0sqna2K-NgsqQAI0ZDPk6xcnwD6/view?usp=drivesdk" },
     { title: "Surabhi - Creatives", url: "https://drive.google.com/file/d/10l2qjy8xWe7Sn4kH7POyVC80rTgKuiI2/view?usp=drivesdk" },
@@ -245,7 +245,7 @@ aiCreatives: {
 aiFilm: {
   title: "AI Brand Film",
   desc: "Lights. Camera. AI.",
-  img: "",
+  img: "https://images.unsplash.com/photo-1723396612574-961649793bb9",
   items: [
     { title: "Aposan - Brand Film", url: "https://drive.google.com/file/d/1te-UvFs0b5fLTq3B-boPrTC6sZdp1b9P/view?usp=drivesdk" }
   ]
@@ -254,6 +254,7 @@ aiFilm: {
 aiClips: {
   title: "AI Brand Clips",
   desc: "A lil this, A lil that",
+  img: "https://images.unsplash.com/photo-1588473158757-afdb399558d6",
   items: [
     { title: "Bobakat - Valentine's Week", url: "https://docs.google.com/presentation/d/1AgmS8-2WNuu13_2z5czLpLm6e_kMBoKYccSNoGqmQQE/edit?usp=drivesdk" },
     { title: "Winn – Halloween", url: "https://drive.google.com/file/d/1grUCan7Dj2Vl1YqRt4hPBh1kz1lXeydI/view?usp=drivesdk" },
@@ -266,6 +267,7 @@ aiClips: {
 aiAnthems: {
   title: "AI Anthems",
   desc: "Let the brand sing",
+  img: "https://images.unsplash.com/photo-1756650721982-26fdf2103315",
   items: [
     { title: "Tribe - Brand Anthem", url: "https://drive.google.com/file/d/14HVn4D2_z0ZshJCDJhUMx18FnBxlYiR7/view?usp=drivesdk" },
     { title: "Tribe - Campaign Anthem", url: "https://drive.google.com/file/d/1rHx5EE9A8mT4h45oJ-bPrnyIolSjh0la/view?usp=drivesdk" },
@@ -281,13 +283,13 @@ aiAnthems: {
 aiPhotoshoot: {
   title: "AI Photoshoot",
   desc: "Say Cheese",
+  img: "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac",
   items: [
     { title: "Gut2Go", url: "https://docs.google.com/presentation/d/1_8aLEreHGcTlGm82DG7RUbvyEzkttId7D7uhDjZqsDM/edit?usp=sharing" },
     { title: "Apsara Ice Creams", url: "https://docs.google.com/presentation/d/1XRJnPkzv72cvE-rLXbcZFrJVDtGe1aq_QokURpVlnVY/edit?usp=sharing" },
     { title: "Signature", url: "https://docs.google.com/presentation/d/1eQvm7oxEqp85YTzEkTZJk56iQdN62yBj1MNCGRlEzkk/edit?usp=sharing" }
   ]
 },
-
 flex: {
   title: "Humble Flex",
   desc: "Side Quests",
