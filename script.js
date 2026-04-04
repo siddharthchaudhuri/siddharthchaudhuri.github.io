@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadSection("hero", "hero.html");
   await loadSection("portfolio", "portfolio.html");
 
+  requestAnimationFrame(() => {
   initHero();
+});
 
 });
 
