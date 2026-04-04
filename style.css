@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 body {
@@ -47,8 +47,9 @@ body {
 
 .hero-content h1 {
   font-size: 90px;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .hero-content p {
