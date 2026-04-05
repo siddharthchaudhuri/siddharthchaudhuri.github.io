@@ -235,9 +235,13 @@ aiCreatives: {
   desc: "Written and Designed by moi",
   img: "https://images.unsplash.com/photo-1609921212029-bb5a28e60960",
   items: [
-    { title: "Camlin - Creatives", url: "https://drive.google.com/file/d/1li40S0sqna2K-NgsqQAI0ZDPk6xcnwD6/view?usp=drivesdk" },
+    { title: "Camlin - Hoarding Creatives", url: "https://drive.google.com/file/d/1li40S0sqna2K-NgsqQAI0ZDPk6xcnwD6/view?usp=drivesdk" },
     { title: "Surabhi - Creatives", url: "https://drive.google.com/file/d/10l2qjy8xWe7Sn4kH7POyVC80rTgKuiI2/view?usp=drivesdk" },
+    { title: "Linen Homes - Key Visuals", url: "https://drive.google.com/file/d/1mQOTuVMxhIC-Ln00ZkhDsJQgvS2huKTe/view?usp=drive_link" },
     { title: "Apsara - Frames", url: "https://drive.google.com/file/d/10YcNqIxyG1NJxYhcAogf8bSuWfzfad1n/view?usp=drivesdk" },
+    { title: "Apsara - World Cup", url: "https://drive.google.com/file/d/1nAzvf0-RAE48ksg7H-oLoHhn0pgilFKB/view?usp=drive_link" },
+    { title: "CG - Valentine's", url: "https://drive.google.com/file/d/1d6sBcEhKwHOLOXU6b38p8rSwXsK9Ax7A/view?usp=drive_link" },
+    { title: "CG - Magazine Style Static", url: "https://drive.google.com/file/d/1diDAhX6m8uBhYm_yzQ10z5IggXPhdEm3/view?usp=drive_link" },
     { title: "Freya - Creatives", url: "https://drive.google.com/file/d/1vFoxNOLNVodQufqQy1J76kUjaUASjhzC/view?usp=drivesdk" }
   ]
 },
