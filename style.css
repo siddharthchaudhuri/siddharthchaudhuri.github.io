@@ -95,10 +95,26 @@ body {
   gap: 30px;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 /* CARD */
 .card {
   position: relative;
-  height: 280px;
+  min-height: 240px;
+  height: auto;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
