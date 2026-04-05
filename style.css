@@ -46,10 +46,15 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 90px;
-  font-weight: 600;
+  font-size: clamp(36px, 8vw, 90px);
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -1px;
+  text-align: center;
+  padding: 0 16px;
+}
+.hero-content {
+  max-width: 90%;
+  margin: auto;
 }
 
 .hero-content p {
